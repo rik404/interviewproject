@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -22,6 +24,8 @@ public class User {
 
     private String email;
 
+    @OneToMany
+    private List<CreditCard> creditCardList;
     // TODO: User's credit card
     // HINT: A user can have one or more, or none at all. We want to be able to query credit cards by user
     //       and user by a credit card.

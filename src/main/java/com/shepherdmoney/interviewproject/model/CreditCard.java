@@ -1,14 +1,12 @@
 package com.shepherdmoney.interviewproject.model;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import java.util.*;
 
 @Entity
 @Getter
@@ -25,8 +23,16 @@ public class CreditCard {
 
     private String number;
 
+    @ManyToOne
+    private User owner;
     // TODO: Credit card's owner. For detailed hint, please see User class
     // Some field here <> owner;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private SortedMap<String, BalanceHistory> balanceHistories =
+            new TreeMap<>(Comparator.reverseOrder());
+
+    // priorityqueue to hold most recent date balance as first element
 
     // TODO: Credit card's balance history. It is a requirement that the dates in the balanceHistory 
     //       list must be in chronological order, with the most recent date appearing first in the list. 
