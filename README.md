@@ -1,5 +1,6 @@
 # Shepherd Money Interview Project
 
+Completed by rik on 04/23 11:18pm
 ## Introduction
 
 Thanks for your interest in applying to Shepherd Money! Complete this short toy project before your interview to help us evaluate your skills as a software engineer. It shouldn't take more than an hour if you know Spring Boot. We look forward to seeing your work and learning more about you!
